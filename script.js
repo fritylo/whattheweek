@@ -1,9 +1,11 @@
 async function main() {
-    window.scrollTo({
-       top: 0,
-       behavior: 'auto',
-       left: 0,
-    });
+    setTimeout(() => {
+       window.scrollTo({
+          top: 0,
+          behavior: 'auto',
+          left: 0,
+       });
+    }, 500);
 
     window.replacements = await fetch('./replacements.json').then(res => res.json());
 
