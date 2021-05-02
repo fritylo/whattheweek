@@ -5,7 +5,7 @@ async function main() {
           behavior: 'auto',
           left: 0,
        });
-    }, 500);
+    }, 1000);
 
     window.replacements = await fetch('./replacements.json').then(res => res.json());
 
