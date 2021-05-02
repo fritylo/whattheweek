@@ -1,0 +1,67 @@
+<head><meta charset="utf8"></head>
+<form action=https://frity.ru/whattheweek/load.php method=post>
+   <select id=host>
+      <option>frity.ru/</option>
+      <option>localhost/</option>
+      <option>frity.online/</option>
+   </select>
+   <select id=targetScript>
+      <option>load.php</option>
+      <option>cache-all.php</option>
+      <option>freeup-cache.php</option>
+   </select> 
+   <select name=week_type>
+      <option>green</option>
+      <option>red</option>
+   </select>
+   <select name=schedule_link placeholder=link>
+      <option>https://kimcfuv.ru/po-gruppam/?Selected_Group=%D0%9F%D0%98-%D0%B1-%D0%BE-201(1)&Selected_WeekType=%D0%97%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F</option>
+      <option>https://kimcfuv.ru/po-gruppam/?Selected_Group=%D0%9F%D0%98-%D0%B1-%D0%BE-201(2)&Selected_WeekType=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F</option>
+      <option>https://kimcfuv.ru/po-gruppam/?Selected_Group=%D0%9F%D0%98-%D0%B1-%D0%BE-202(1)&Selected_WeekType=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F</option>
+      <option>https://kimcfuv.ru/po-gruppam/?Selected_Group=%D0%9F%D0%98-%D0%B1-%D0%BE-202(2)&Selected_WeekType=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F</option>
+      <option>https://kimcfuv.ru/po-gruppam/?Selected_Group=%D0%9F%D0%98-%D0%B1-%D0%BE-203(1)&Selected_WeekType=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%B0%D1%8F+%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D1%8F</option>
+   </select>
+   <input name=weekday_number type=number placeholder=weekdayN value=3>
+   <select name=group>
+      <option>ПИ-б-о-201(2)</option>
+      <option>ПИ-б-о-201(1)</option>
+   </select>
+   <button>submit</button>
+</form>
+
+<script>
+   let form = document.querySelector('form');
+
+   const formAction = {
+      protocol: 'https://',
+      host: 'frity.ru/',
+      basedir: 'whattheweek/',
+      script: 'load.php',
+      renew(prop, value) {
+         this[prop] = value;
+         this.render();
+      },
+      render() {
+         form.action = this.protocol + this.host + this.basedir + this.script;
+      },
+   };
+
+   onchange(host, e => formAction.renew('host', e.target.value)); 
+   onchange(targetScript, e => formAction.renew('script', e.target.value));
+
+   // form.addEventListener('submit', e => {
+   //    const linkInput = document.querySelector('[name="schedule_link"]');
+   //    linkInput.value = encodeURIComponent(linkInput.value);
+   //    debugger;
+   // })
+
+   function onchange(target, callback) {
+      let el;
+
+      if (typeof(target) == 'string') {
+         el = document.querySelector(target);
+      } else el = target;
+
+      el.addEventListener('change', callback);
+   }
+</script>

@@ -1,0 +1,20 @@
+{
+    "title": "<div style=\"transform: rotate(45deg); font: 1.5em monospace;\"><div style=\"color: lightgreen;\">Какая</div><div style=\"color: #555;\">блятб</div> <div style=\"color: pink;\">неделя?</div></div>",
+    "creation_date": "20.12.2020",
+    "adaptive": ["pc", "mobile"],
+
+    "priority": 6,
+
+    "is_supported": true,
+    "is_hidden": false,
+
+    "style": {
+    	"preview": {
+            "background": "linear-gradient(45deg, red, #ff3434 45%, #ddd 45%, #fff 55%, green 55%, #00ad00)"
+    	},
+    	"content": {
+    
+    	},
+        "meta": "dark"
+    }
+}
