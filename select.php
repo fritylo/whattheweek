@@ -1,6 +1,6 @@
 <?php
 require 'ver.php';
-define('COURSE_1_YEAR', 20);
+define('COURSE_1_YEAR', strval(substr(date('yy'), 2, 2)));
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ define('COURSE_1_YEAR', 20);
             $bakalavr = [];
             $magistr = [];
 
-            for ($i = 0; $i < 4; $i++) {
+            for ($i = 0; $i < 5; $i++) {
                 $year = COURSE_1_YEAR - $i;
                 array_push($bakalavr, "$direction-б-о-$year");
                 array_push($magistr, "$direction-м-о-$year");

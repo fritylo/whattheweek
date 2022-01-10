@@ -4,71 +4,71 @@ require 'ver.php';
 
 <?php
 if (!array_key_exists('direction', $_GET)) {
-    header('Location: ./select.php');
+   header('Location: ./select.php');
 }
 
 function console_log($message) {
-    echo '<script>console.log(`' . $message . '`)</script>';
+   echo '<script>console.log(`' . $message . '`)</script>';
 }
 
 
 $direction = $_GET['direction'];
 
 $GLOBALS['link_mask'] = [
-    "{$direction}1(1)",
-    "{$direction}1(2)",
-    "{$direction}2(1)",
-    "{$direction}2(2)",
-    "{$direction}3(1)",
-    "{$direction}3(2)",
+   "{$direction}1(1)",
+   "{$direction}1(2)",
+   "{$direction}2(1)",
+   "{$direction}2(2)",
+   "{$direction}3(1)",
+   "{$direction}3(2)",
 ];
 
 if (mb_substr($direction, 0, 2) == 'ЭЭ') {
-    $year = mb_substr($direction, 7, 2);
-    console_log($year);
-    switch ($year) {
-        case '20':
-            console_log('is 20');
-            $GLOBALS['link_mask'] = [
-                'ЭЭ-б-о 201(1)',
-                'ЭЭ-б-о-201(2)',
-                'ЭЭ-б-о-202(1)',
-                'ЭЭ-б-о-202(2)',
-                'ЭЭ-б-о-203(1)',
-                'ЭЭ-б-о-203(2)',
-            ];
-            break;
-        case '19':
-            $GLOBALS['link_mask'] = [
-                'ЭЭ-б-о -191(1)',
-                'ЭЭ-б-о-191(2)',
-                'ЭЭ-б-о-192(1)',
-                'ЭЭ-б-о-192(2)',
-                'ЭЭ-б-о-193(1)',
-                'ЭЭ-б-о-193(2)',
-            ];
-            break;
-        case '18':
-            $GLOBALS['link_mask'] = [
-                'ЭЭ-б-о -181(1)',
-                'ЭЭ-б-о-181(2)',
-                'ЭЭ-б-о-182(1)',
-                'ЭЭ-б-о-182(2)',
-                'ЭЭ-б-о-183(1)',
-                'ЭЭ-б-о-183(2)',
-            ];
-            break;
-        case '17':
-            $GLOBALS['link_mask'] = [
-                'ЭЭ-б-о -171(1)',
-                'ЭЭ-б-о-171(2)',
-                'ЭЭ-б-о-172(1)',
-                'ЭЭ-б-о-172(2)',
-                'ЭЭ-б-о-173(1)',
-                'ЭЭ-б-о-173(2)',
-            ];
-            break;
-    };
+   $year = mb_substr($direction, 7, 2);
+   console_log($year);
+   switch ($year) {
+      case '20':
+         console_log('is 20');
+         $GLOBALS['link_mask'] = [
+            'ЭЭ-б-о 201(1)',
+            'ЭЭ-б-о-201(2)',
+            'ЭЭ-б-о-202(1)',
+            'ЭЭ-б-о-202(2)',
+            'ЭЭ-б-о-203(1)',
+            'ЭЭ-б-о-203(2)',
+         ];
+         break;
+      case '19':
+         $GLOBALS['link_mask'] = [
+            'ЭЭ-б-о -191(1)',
+            'ЭЭ-б-о-191(2)',
+            'ЭЭ-б-о-192(1)',
+            'ЭЭ-б-о-192(2)',
+            'ЭЭ-б-о-193(1)',
+            'ЭЭ-б-о-193(2)',
+         ];
+         break;
+      case '18':
+         $GLOBALS['link_mask'] = [
+            'ЭЭ-б-о -181(1)',
+            'ЭЭ-б-о-181(2)',
+            'ЭЭ-б-о-182(1)',
+            'ЭЭ-б-о-182(2)',
+            'ЭЭ-б-о-183(1)',
+            'ЭЭ-б-о-183(2)',
+         ];
+         break;
+      case '17':
+         $GLOBALS['link_mask'] = [
+            'ЭЭ-б-о -171(1)',
+            'ЭЭ-б-о-171(2)',
+            'ЭЭ-б-о-172(1)',
+            'ЭЭ-б-о-172(2)',
+            'ЭЭ-б-о-173(1)',
+            'ЭЭ-б-о-173(2)',
+         ];
+         break;
+   };
 }
 
 $GLOBALS['direction'] = $direction;
@@ -113,7 +113,7 @@ $GLOBALS['direction'] = $direction;
 
    <!-- PC block -->
    <!-- Yandex.RTB R-A-665787-2 -->
-<!--
+   <!--
    <div id="yandex_rtb_R-A-665787-2"></div>
    <script type="text/javascript">
       (function(w, d, n, s, t) {
@@ -228,21 +228,26 @@ $GLOBALS['direction'] = $direction;
       </section>
    </main>
    <center class="footer" style="">
-      <button id="updateButton" class="slide-button">Обновить расписание групп</button>
+      <button id="updateButton" class="slide-button">
+         Загрузить распиcание для <strong>ПИ-б-о-201(1)</strong>
+         <form class="dn item_T_excel__file-form" enctype="multipart/form-data" action="./upload/upload-excel.php" method="POST">
+            <input type="text" name="group" />
+            <input class="item_T_excel__file" type="file" name="value" accept=".xls,.xlsx,.xml,.ods,.slk,.gnumeric,.csv" />
+         </form>
+      </button>
       <a href="#" target="_blank">
-         <button class="slide-button kim-open">Открыть на сайте КИМ</button>
+         <button class="slide-button kim-open" style="display: none">Открыть на сайте КИМ</button>
       </a>
 
       <!-- Yandex.Metrika informer -->
-      <a style="height: 2em" href="https://metrika.yandex.ru/stat/?id=68187961&amp;from=informer"
-      target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/68187961/3_0_ECECECFF_CCCCCCFF_0_pageviews"
-      style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
+      <a style="height: 2em" href="https://metrika.yandex.ru/stat/?id=68187961&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/68187961/3_0_ECECECFF_CCCCCCFF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" /></a>
       <!-- /Yandex.Metrika informer -->
    </center>
-    <footer style="color: white; font: italic 0.8em monospace; text-align: center;">
-        Вопросы, предложения, баги? Пиши: <a href="https://vk.com/fritylo">VK</a>, <a href="mailto:nikonovfedor36936@gmail.com">Email</a>. Создатель сайта: Никонов Фёдор ПИ-201(2), ak fritylo.
-    </footer>
+   <footer style="color: white; font: italic 0.8em monospace; text-align: center;">
+      Вопросы, предложения, баги? Пиши: <a href="https://vk.com/fritylo">VK</a>, <a href="mailto:nikonovfedor36936@gmail.com">Email</a>. Создатель сайта: Никонов Фёдор ПИ-201(2), ak fritylo.
+   </footer>
 
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
    <script src="https://unpkg.com/@popperjs/core@2"></script>
    <script src="https://unpkg.com/tippy.js@6"></script>
 

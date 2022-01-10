@@ -1,0 +1,13 @@
+form:first-of-type {
+   margin-right: 0.5em;
+}
+form input[type="submit"] {
+   font-size: 2em;
+   margin: auto;
+}
+
+.row {
+   display: flex;
+   justify-content: center;
+   margin-top: 2em;
+}

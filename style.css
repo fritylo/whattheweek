@@ -499,3 +499,7 @@ main.red .color-switch {
 footer > a {
     color: gray;
 }
+
+.dn {
+    display: none;
+}
