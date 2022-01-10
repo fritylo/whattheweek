@@ -1,0 +1,23 @@
+{
+   "icon": "",
+   "description": "Basic field type \"Mirror\".",
+   "version": "1.0.0",
+   "author": "frity corp.",
+   "priority": 0,
+   "enabled": true,
+   "tags": [
+      "built-in"
+   ],
+   "depends_on": ["api-db"],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

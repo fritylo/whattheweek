@@ -1,0 +1,23 @@
+{
+   "icon": "",
+   "description": "Field type \"Excel\". Upload and parse .xls, .xlsx, .odt, and more table file types.",
+   "version": "1.0.0",
+   "author": "frity corp.",
+   "priority": 0,
+   "enabled": true,
+   "tags": [
+      "built-in"
+   ],
+   "depends_on": [],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

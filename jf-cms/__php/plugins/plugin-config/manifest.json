@@ -1,0 +1,23 @@
+{
+   "icon": "",
+   "description": "Plugin to make user define his own code handlers in php code.",
+   "version": "1.0.0",
+   "author": "frity crop.",
+   "priority": -10000,
+   "enabled": true,
+   "tags": [
+      "built-in"
+   ],
+   "depends_on": [],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

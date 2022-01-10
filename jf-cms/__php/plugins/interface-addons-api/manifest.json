@@ -1,0 +1,23 @@
+{
+   "icon": "",
+   "description": "API to enhance JustField interface, e.g. add new menu item.",
+   "version": "1.0.0",
+   "author": "frity corp.",
+   "priority": 9700,
+   "enabled": true,
+   "tags": [
+      "built-in"
+   ],
+   "depends_on": [ "api-reg" ],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

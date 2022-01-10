@@ -1,6 +1,6 @@
 <?php
 
-$path_to_jf = '/../../just-field/dist/__php/';
+$path_to_jf = '/../jf-cms/__php/';
 
 require_once __DIR__ . $path_to_jf . 'jf.php';
 $reg->path_to_jf_php_folder = '.'.$path_to_jf;

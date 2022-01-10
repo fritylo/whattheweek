@@ -1,0 +1,25 @@
+{
+   "icon": "",
+   "description": "Basic theme for Just Field CMS.",
+   "version": "1.0.0",
+   "author": "frity corp.",
+   "priority": 0,
+   "enabled": true,
+   "tags": [
+      "theme"
+   ],
+   "depends_on": [
+      "just-field-orm"
+   ],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

@@ -1,0 +1,23 @@
+{
+   "icon": "",
+   "description": "Defines inner register of admin panel, used by plugins to communicate.",
+   "version": "1.1.0",
+   "author": "frity corp.",
+   "priority": 10000,
+   "enabled": true,
+   "tags": [
+      "built-in"
+   ],
+   "depends_on": [],
+   "php": {
+      "url_match": []
+   },
+   "js": {
+      "url_match": []
+   },
+   "css": {
+      "url_match": []
+   },
+   "settings": {},
+   "readme": "./_readme.md"
+}

@@ -1,0 +1,15 @@
+td[colname="sender"] {
+   min-width: 7em;
+}
+
+td[colname="subject"] {
+   min-width: 10em;
+}
+   
+td[colname="inspect"] {
+   min-width: 10em;
+}
+
+td[colname="send"] {
+   min-width: 10em;
+}
