@@ -154,7 +154,15 @@ async function main() {
          return;
       };
 
-      let schedule = await res.json();
+      let schedule = null;
+      try {
+         schedule = await res.json();
+      } catch (err) {
+         alert('При попытке получения данных с сервера возникла ошибка.\nВозможно расписание ещё не было загружено.\nПопробуйте загрузить расписание.\nЕсли это не помогает - свяжитесь с разработчиком (контакты внизу страницы).');
+         todayBlock.querySelector('.today-schedule__message').innerHTML = 'Произошла ошибка на сервере...';
+         clearInterval(intervalLoad);
+         return;
+      }
       window.schedule = schedule;
 
       const lastUpdateTime = schedule.time * 1000;
