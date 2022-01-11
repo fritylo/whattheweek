@@ -16,6 +16,7 @@ body {
    display: flex;
    justify-content: flex-end;
    margin-bottom: 0.5em;
+   flex-wrap: wrap;
 }
 .row > * {
    background: #fff;
@@ -55,6 +56,7 @@ body {
    padding-right: 0.75em;
    border-radius: 1em;
    z-index: 1000;
+   max-width: calc(100vw - 4em);
 }
 
 .select-order__controls {
