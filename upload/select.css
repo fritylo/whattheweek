@@ -59,6 +59,18 @@ body {
    max-width: calc(100vw - 4em);
 }
 
+@media screen and (max-width: 700px) {
+   .select-order {
+      font-size: 0.75em;
+   }
+   .row > * {
+      font-size: inherit;
+   }
+   .select-order__hint {
+      display: none;
+   }
+}
+
 .select-order__controls {
    position: absolute;
    left: 0.5em;
