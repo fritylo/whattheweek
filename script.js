@@ -7,7 +7,13 @@ async function main() {
       });
    }, 1000);
 
-   window.replacements = await fetch('./replacements.json').then(res => res.json());
+   try {
+      window.replacements = await fetch(
+         'storage/' + $('.button_repl-editor').attr('data-file')
+      ).then(res => res.json());
+   } catch (err) {
+      console.log('No replacements');
+   }
 
    updateButton.addEventListener('click', async e => {
       const lastLink = sel('.last-link');
@@ -282,19 +288,6 @@ async function main() {
       kimOpenButton.classList.add('kim-open_alife');
 
       setInterval(() => loadToday(link), 2 * 60 * 60 * 1000); // every 2 hours
-   }
-
-   function fetchScript(script, link, groupName) {
-      return fetch(script, {
-         method: 'POST',
-         body: Object.entries({
-            'schedule_link': encodeURIComponent(link),
-            'weekday_number': weekDay > 0 && weekDay < 6 ? (weekDay - 1) : (0),
-            'group': groupName,
-            'week_type': weekType,
-         }).map(([key, val]) => `${key}=${val}`).join('&'),
-         headers: { 'Content-type': 'application/x-www-form-urlencoded' },
-      }).then(res => res.text());
    }
 
    function initTips() {

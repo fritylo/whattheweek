@@ -235,6 +235,10 @@ $GLOBALS['direction'] = $direction;
             <input class="item_T_excel__file" type="file" name="value" accept=".xls,.xlsx,.xml,.ods,.slk,.gnumeric,.csv" />
          </form>
       </button>
+      <?php $replacements_file = preg_replace('/\d/', '', $direction) . 'replacements.json' ?>
+      <a class="button_repl-editor" data-file="<?= $replacements_file ?>" href="replacements-editor.php?file=<?= $replacements_file ?>" target="_blank">
+         <button class="slide-button">Настройка замен</button>
+      </a>
       <a href="#" target="_blank">
          <button class="slide-button kim-open" style="display: none">Открыть на сайте КИМ</button>
       </a>
