@@ -13,6 +13,7 @@ async function main() {
       ).then(res => res.json());
    } catch (err) {
       console.log('No replacements');
+      window.replacements = {};
    }
 
    updateButton.addEventListener('click', async e => {
