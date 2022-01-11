@@ -9,7 +9,7 @@ async function main() {
 
    try {
       window.replacements = await fetch(
-         'storage/' + $('.button_repl-editor').attr('data-file')
+         'storage/' + $('.button_repl-editor').attr('data-file') + '?t=' + Date.now()
       ).then(res => res.json());
    } catch (err) {
       console.log('No replacements');
@@ -146,7 +146,7 @@ async function main() {
       let res = null;
       let fetchErr = false;
       try {
-         res = await fetch(`./storage/${groupName}.json`)
+         res = await fetch(`./storage/${groupName}.json?t=${Date.now()}`);
       } catch (err) {
          alert('При попытке получения данных с сервера возникла ошибка.\nВозможно расписание ещё не было загружено.\nПопробуйте загрузить расписание.\nЕсли это не помогает - свяжитесь с разработчиком (контакты внизу страницы).');
          todayBlock.querySelector('.today-schedule__message').innerHTML = 'Произошла ошибка на сервере...';
