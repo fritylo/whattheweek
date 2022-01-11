@@ -262,10 +262,12 @@ async function main() {
          const lessonType = cutoutLessonType(td);
       });
       indexed(3, len(), td => {
-         const replacements = {
-            'ссылка на moodle\\.cfuv\\.ru': 'moodle',
-            'СПОРТ ЗАЛ ТA': 'Спортзал',
-         };
+         for (let target in replacements) {
+            let repl = replacements[target];
+            td.innerHTML = td.innerHTML.replace(new RegExp(target, 'i'), repl);
+         }
+      });
+      indexed(4, len(), td => {
          for (let target in replacements) {
             let repl = replacements[target];
             td.innerHTML = td.innerHTML.replace(new RegExp(target, 'i'), repl);
