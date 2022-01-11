@@ -45,6 +45,9 @@ $inputs .= '</div>';
    <h1>
       <center>Настройка замен для <?= $file_name ?></center>
    </h1>
+   <h2>Туториал по работе</h2>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/XCIGNePaLfo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <h2>Замены</h2>
    <?= $inputs ?>
    <div class="row">
       <button class="button_add-rule">Добавить правило</button>
