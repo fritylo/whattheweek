@@ -26,6 +26,11 @@ if ($schedule) {
       $is_thead = false;
       $thead_count = 0;
       $tbody = '<tbody>';
+
+      $is_week_free = false;
+      if ($week_type_name == 'odd')
+         $is_week_free = true;
+
       foreach ($week_type_content as $week_day_name => $week_day_content) {
          $schedule_pretty->{$week_type_name}->{$week_day_name} = [];
          $tbody_loc = '';
@@ -46,6 +51,9 @@ if ($schedule) {
                if (strlen($lesson_prop_val) > 30) 
                   $lesson_prop_val = mb_substr($lesson_prop_val, 0, 30) . '...';
                $tbody_loc .= '<td>'.$lesson_prop_val.'</td>';
+
+               if ($lesson_prop_val && $lesson_prop != 'number')
+                  $is_week_free = false;
             }
             if (!$is_thead) {
                $is_thead = true;
@@ -58,6 +66,10 @@ if ($schedule) {
       }
       $tbody .= '</tbody>';
       $res .= $thead . $tbody . '</table>';
+
+      if ($is_week_free) {
+         $schedule_pretty->odd = $schedule_pretty->even;
+      }
    }
 }
 
@@ -71,12 +83,18 @@ $table = $res;
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Результат</title>
-   <link rel="stylesheet" href="table.css">
-   <link rel="stylesheet" href="confirm.css">
+   <link rel="stylesheet" href="table.css?ver=<?= $VER ?>">
+   <link rel="stylesheet" href="confirm.css?ver=<?= $VER ?>">
 </head>
 <body>
    <h1>Результаты</h1>
-   <p>В результате твоей работы была сгенерирована следующая таблица. Проверь её на правильность, и затем нажми на кнопку "Сохранить расписание" в конце страниы, чтобы сохранить изменения.</p>
+   <p>
+      В результате твоей работы была сгенерирована следующая таблица.
+      Проверь её на правильность, и затем нажми на кнопку "Сохранить расписание" в конце страниы, чтобы сохранить изменения.
+   </p>
+   <p>
+      Если ты не заполнял нечетную неделю, то данные будут скопированы из четной, однако, в таблице ниже этого видно не будет.
+   </p>
    <?= $table ?>
    <div class="row">
       <form action="save.php" method="POST">
