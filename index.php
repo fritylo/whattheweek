@@ -251,7 +251,7 @@ $GLOBALS['direction'] = $direction;
    <script src="https://unpkg.com/@popperjs/core@2"></script>
    <script src="https://unpkg.com/tippy.js@6"></script>
 
-   <script src="./adblock-sniper.js?ver=<? $VER ?>"></script>
+   <script src="./adblock-sniper.js?ver=<?= $VER ?>"></script>
    <script src="script.js?ver=<?= $VER ?>"></script>
 </body>
 
