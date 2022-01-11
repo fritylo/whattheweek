@@ -235,6 +235,10 @@ async function main() {
          onclick = (i, n, callback) => indexed(i, n, td => td.addEventListener('click', callback)),
          becometip = (i, t, n) => two(i, t, n, (tdi, tdt) => {
             let html = tdi.innerHTML;
+            for (let target in replacements) {
+               let repl = replacements[target];
+               html = html.replace(new RegExp(target, 'i'), repl);
+            }
             if (html) {
                tdt.setAttribute('data-tip', html);
                tdt.classList.add('tippied');
