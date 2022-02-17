@@ -202,7 +202,7 @@ async function main() {
          let classroom = lesson.classroom;
          if (classroom.match(/moodle\.cfuv/)) {
             classroom = `<a href="${classroom}" target="_blank">moodle</a>`;
-         } else if (classroom.match(/vk\.com/)) {
+         } else if (classroom.match(/vk\.(com|me)/)) {
             classroom = `<a href="${classroom}" target="_blank">vk</a>`;
          }
          tableHtml += `
